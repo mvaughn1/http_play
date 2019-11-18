@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_play/get_cnn.dart';
+import 'dart:async';
 //import 'dart:convert';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyApp());
+void main() async {
+
+  await setthebody();
+  runApp(MyApp());
+
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -23,7 +30,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Dmarkemo Home Page'),
+      home: MyHomePage(title: 'Flutter markhttp stuff'),
     );
   }
 }
@@ -49,15 +56,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+
+
   void _incrementCounter() {
-    setState(() {
+    setState(()  {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-      getCNNbody();
+
+      setthebody();
 
     });
   }
